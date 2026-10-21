@@ -7,7 +7,7 @@ COPY pom.xml .
 RUN --mount=type=cache,target=/root/.m2 \
     mvn -B -q dependency:go-offline
 
-COPY ../collaborative-app-be/src ./src
+COPY src ./src
 
 RUN --mount=type=cache,target=/root/.m2 \
     mvn -B -q clean package -DskipTests
